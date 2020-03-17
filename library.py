@@ -98,8 +98,10 @@ class Book:
         self.id = id
         self.name = name
         self.status = status
+        self.resouce = simpy.Resource(env, capacity= 1)
         self.due_date = due_date
         self.borrower = borrower
+        self.req = None
 
 class Student:
     def __init__(self, id, name, env):
@@ -139,6 +141,7 @@ class Student:
                 yield self.env.timeout(random.randint(LATE_CHECKIN_MIN, LATE_CHECKIN_MAX))
             
             if(book.status != Status.LOST):
+                book.resouce.release(book.req)
                 book.status = Status.AVAILABLE
                 global returned_books_count
                 returned_books_count+=1
@@ -159,7 +162,13 @@ class Student:
         borrowing = None
         for book in available_books[book_choice]:
             if(book.status == Status.AVAILABLE): # If book found
+                time = env.now
+                req = book.resouce.request()
+                yield req | self.env.timeout(1)
+                if(time != env.now):
+                    break
                 book.status = Status.BORROWING
+                book.req = req
                 borrowing = book
                 break
         if(borrowing == None): # If not found
@@ -283,7 +292,6 @@ df = pd.DataFrame({
     'Average return times': daily_return_times})
 
 print(df)
-# print(daily_return_times[600:900])
 
 df = pd.melt(df, ['time'])
 g = sns.FacetGrid(df, col= 'variable')
