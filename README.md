@@ -1,18 +1,25 @@
 # Process-Simulations
-Simulation models of different processes created with help of simpy
+Simulation models of different processes created with help of SimPy
 
 ## List of Models
-- [Library](#Library) <sup>[file](library.py)</sup>
+- [Library](#Library%20Simulation%20Model) <sup>[file](library.py)</sup>
 
-## Library
+## Library Simulation Model
 
 [Python file](library.py)
 
-The library simulation model is a year long simulation of a student library. The library has 2 counters for checking in and out books. Students come looking for a particular book and borrow it for upto 15 days. Sometimes, students do tend to be late in returning the books. There are limited books in the library and limited copies of each book. If a student can't find a particular book, they will return back later for the same or a different book. Very rarely, students will lose the books they borrowed. Occasionaly, new books are added to the library.
+The library simulation model is a year long simulation of a student library. The library has 2 counters for checking in and out books. Students come looking for a particular book and borrow it. Sometimes, students tend to be late in returning the books. There are limited books in the library and limited copies of each book. If a student can't find a particular book, they will return back later for the same or a different book. Very rarely, students will lose the books they borrowed. Occasionaly, new books are added to the library.
 
-All parameters are described in the [python file](library.py) header. You can change any parameter very easily when running the simulation. Logging capability is provided (disabled by default). The final result is a graph of various attributes being compared over the time period.
+All parameters are described in the [python file](library.py) docstring. You can change any parameter very easily when running the simulation. Logging capability is provided (disabled by default). The final result is a graph of various attributes being compared over the time period. You can use the model to predict other parameters as well.
 
-## [License](LICENSE)
+## Libraries used
+[SimPy](https://simpy.readthedocs.io/) is a process-based discrete-event simulation framework based on standard Python. It is made available under the [MIT License](https://simpy.readthedocs.io/en/latest/about/license.html) by Team SimPy.
+
+This repository uses SimPy to help simulate models and handle concurrent processes. You can learn more about SimPy with [this tutorial](https://simpy.readthedocs.io/en/latest/simpy_intro/index.html).
+
+## License
+This project and all included source code is made available under [MIT License](LICENSE) unless stated otherwise. A copy of the license is included below:-
+
 MIT License
 
 Copyright (c) 2020 Yashovardhan Dhanania 
