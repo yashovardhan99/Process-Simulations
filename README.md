@@ -20,7 +20,7 @@ You must install the following packages before using this project.
 
 This repository uses SimPy to help simulate models and handle concurrent processes. You can learn more about SimPy with [this tutorial](https://simpy.readthedocs.io/en/latest/simpy_intro/index.html).
 
-To install, run command `pip install scipy`
+To install, run command `pip install simpy`
 
 ### Faker
 [Faker](https://faker.readthedocs.io/) is a Python package that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
