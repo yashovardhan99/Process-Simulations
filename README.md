@@ -12,10 +12,30 @@ The library simulation model is a year long simulation of a student library. The
 
 All parameters are described in the [python file](library.py) docstring. You can change any parameter very easily when running the simulation. Logging capability is provided (disabled by default). The final result is a graph of various attributes being compared over the time period. You can use the model to predict other parameters as well.
 
-## Libraries used
+## Dependencies
+You must install the following packages before using this project.
+
+### SimPy
 [SimPy](https://simpy.readthedocs.io/) is a process-based discrete-event simulation framework based on standard Python. It is made available under the [MIT License](https://simpy.readthedocs.io/en/latest/about/license.html) by Team SimPy.
 
 This repository uses SimPy to help simulate models and handle concurrent processes. You can learn more about SimPy with [this tutorial](https://simpy.readthedocs.io/en/latest/simpy_intro/index.html).
+
+To install, run command `pip install scipy`
+
+### Faker
+[Faker](https://faker.readthedocs.io/) is a Python package that generates fake data for you. Whether you need to bootstrap your database, create good-looking XML documents, fill-in your persistence to stress test it, or anonymize data taken from a production service, Faker is for you.
+
+It is used in this project to generate fake student names and book titles. You can learn more about Faker [here](https://faker.readthedocs.io/). It is licensed under the [MIT License](https://raw.githubusercontent.com/joke2k/faker/master/LICENSE.txt)
+
+To install, run command `pip install Faker`
+
+### Other Dependencies
+- Numpy : `pip install numpy`
+- Pandas : `pip install pandas`
+- Matplotlib for graphing : `pip install matplotlib`
+- Seaborn for graphing : `pip install seaborn`
+
+Other modules used are pre-installed with most python installations and are hence not listed here. If you face difficulties running this project, please check for dependencies and open an issue, if required.
 
 ## License
 This project and all included source code is made available under [MIT License](LICENSE) unless stated otherwise. A copy of the license is included below:-
